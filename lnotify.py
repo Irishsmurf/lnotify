@@ -21,7 +21,7 @@
 # change hook_print callback argument type of displayed/highlight
 # (WeeChat >= 1.0)
 
-import weechat, string, pynotify
+import weechat, string, notify2 as pynotify
 
 weechat.register("lnotify", "kevr", "0.1.4", "GPL3", "lnotify - A libnotify script for weechat", "", "")
 
