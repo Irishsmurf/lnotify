@@ -52,7 +52,7 @@ def get_notified(data, bufferp, uber_empty, tagsn, isdisplayed,
         buffer = (weechat.buffer_get_string(bufferp, "short_name") or
                 weechat.buffer_get_string(bufferp, "name"))
         if buffer == prefix:
-            n = pynotify.Notification("WeeChat", "%s said: %s" % (prefix,
+            n = pynotify.Notification("WeeChat", "<bold>%s<bold> said: %s" % (prefix,
                 message),weechat.config_get_plugin('show_icon'))
             if not n.show():
                 print "Failed to send notification"
@@ -61,7 +61,7 @@ def get_notified(data, bufferp, uber_empty, tagsn, isdisplayed,
             weechat.config_get_plugin('show_highlight') == "on"):
         buffer = (weechat.buffer_get_string(bufferp, "short_name") or
                 weechat.buffer_get_string(bufferp, "name"))
-        n = pynotify.Notification("WeeChat", "In %s, %s said: %s" % (buffer,
+        n = pynotify.Notification("WeeChat", "In <bold>%s</bold>, %s said: %s" % (buffer,
             prefix, message),weechat.config_get_plugin('show_icon'))
         if not n.show():
             print "Failed to send notification"
